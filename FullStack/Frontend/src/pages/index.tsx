@@ -14,7 +14,7 @@ export default function Home () {
             <Image src={Logo} alt='Logo' width={30} height={30} />
             <div className='ml-2'>
               <h1 className='text-[20px] md:text-[22px] font-bold'>Evenly</h1>
-              <p className='font-light text-[10px] md:text-[12px] pl-2 tracking-[0.4em]'>
+              <p className='font-light text-[10px] md:text-[12px] pl-[32px] tracking-[0.4em]'>
                 TESTING
               </p>
             </div>
