@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -12,11 +13,11 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ['poppins', 'sans-serif'], // Замените на 'Roboto', если это ваш выбор
       },
     },
   },
   plugins: [],
-  variants: {},
 };
+
 export default config;

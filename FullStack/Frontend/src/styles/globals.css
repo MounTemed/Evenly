@@ -6,25 +6,18 @@
 
 :root {
   --background: #ffffff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
+    --background: #13111A;
+    --foreground: #ededed;
   }
-}
-
-.gradient-text {
-  background: linear-gradient(
-    58deg,
-    rgba(156, 131, 255, 1) 45%,
-    rgba(120, 227, 255, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }
