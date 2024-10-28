@@ -12,12 +12,3 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        poppins: ['poppins', 'sans-serif'], // Замените на 'Roboto', если это ваш выбор
-      },
-    },
-  },
-  plugins: [],
-};
-
-export default config;
