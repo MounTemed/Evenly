@@ -1,35 +1,53 @@
 // src/pages/index.tsx
-import Header from '../components/layout/Header'
-import MainContent from '../components/sections/MainContent'
-import AboutMeSection from '../components/sections/AboutMeSection'
-import StackSection from '../components/sections/Skill'
-import ProjectsSection from '../components/sections/ProjectsSection'
-import { Suspense } from 'react'
+import Head from 'next/head'
+import dynamic from 'next/dynamic'
+import { GetStaticProps } from 'next'
 
-const Home: React.FC = () => {
+const Header = dynamic(() => import('../components/layout/Header'))
+const MainContent = dynamic(() => import('../components/sections/MainContent'))
+const AboutMeSection = dynamic(
+  () => import('../components/sections/AboutMeSection')
+)
+const StackSection = dynamic(() => import('../components/sections/Skill'))
+const ProjectsSection = dynamic(
+  () => import('../components/sections/ProjectsSection')
+)
+
+const fetchData = async () => {
+  return {
+    title: 'Evenly',
+    description: 'Это главная страница вашего приложения.'
+  }
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await fetchData()
+
+  return {
+    props: {
+      data
+    }
+  }
+}
+
+const Home: React.FC<{ data: { title: string; description: string } }> = ({
+  data
+}) => {
   return (
-    <div className='font-poppins'>
-      <Suspense fallback={<p>Loading Header...</p>}>
+    <>
+      <Head>
+        <title>{data.title}</title>
+        <meta name='description' content={data.description} />
+        <link rel='icon' href='/logo.svg' />
+      </Head>
+      <div className='font-poppins'>
         <Header />
-      </Suspense>
-
-      <Suspense fallback={<p>Loading Me...</p>}>
         <MainContent />
-      </Suspense>
-
-      <Suspense fallback={<p>Loading About...</p>}>
         <AboutMeSection />
-      </Suspense>
-
-      <Suspense fallback={<p>Loading Skill...</p>}>
         <StackSection />
-      </Suspense>
-
-      <Suspense fallback={<p>Loading Projects...</p>}>
         <ProjectsSection />
-      </Suspense>
-      
-    </div>
+      </div>
+    </>
   )
 }
 
