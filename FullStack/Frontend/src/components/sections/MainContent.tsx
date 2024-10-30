@@ -1,7 +1,7 @@
 // src/components/sections/MainContent.tsx
 import Image from 'next/image'
 import Avatars from '../../../public/avatar.gif'
-import PinkImage from '../../../public/pink.png'
+import PinkImage from '../../../public/pink.svg'
 import PurpleImage from '../../../public/purples.svg'
 
 const MainContent: React.FC = () => {
@@ -35,6 +35,7 @@ const MainContent: React.FC = () => {
             fill={true}
             className='object-cover rounded-full'
             unoptimized
+            priority
           />
         </div>
       </div>

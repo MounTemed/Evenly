@@ -1,6 +1,6 @@
 // src/components/sections/AboutMeSection.tsx
 import Image from 'next/image';
-import PinkImage from '../../../public/pink.png';
+import PinkImage from '../../../public/pink.svg';
 import PurpleImage from '../../../public/purples.svg';
 
 const AboutMeSection: React.FC = () => {

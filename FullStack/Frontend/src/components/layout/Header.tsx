@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <header className='mt-9 px-5 md:px-16'>
       <div className='flex items-center justify-between w-full max-w-[1180px] mx-auto'>
         <div className='flex items-center'>
-          <Image src={Logo} alt='Logo' width={30} height={30} />
+          <Image src={Logo} alt='Logo' width={30} height={30}/>
           <div className='ml-2'>
             <h1 className='text-lg md:text-xl font-bold'>Evenly</h1>
             <p className='font-light text-xs md:text-sm pl-8 tracking-wide'>TESTING</p>
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
         </div>
         <div className='md:hidden'>
           <button className='text-lg'>
-            <Image src={Burger} alt='Menu' width={35} height={35} />
+            <Image src={Burger} alt='Menu' width={35} height={35} placeholder="blur"/>
           </button>
         </div>
       </div>
