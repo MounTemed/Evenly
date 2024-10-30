@@ -37,7 +37,6 @@ const Custom404: React.FC = () => {
                 alt='Menu'
                 width={35}
                 height={35}
-                placeholder='blur'
               />
             </button>
           </div>
@@ -46,7 +45,7 @@ const Custom404: React.FC = () => {
       <main className='h-screen flex flex-col md:flex-row justify-center items-center text-center mt-10'>
         <div className='w-full max-w-[569px] mx-4'>
           <h1 className='text-[35px] md:text-[80px] font-bold tracking-[15px]'>
-            <span className='text-[#527EFB]'>404</span>-error
+            <span className='text-[#527EFB]'>404</span>-ERROR
           </h1>
           <p className='font-semibold text-[25px] md:text-[40px] tracking-[3px] mt-4'>
             PAGE NOT <span className='text-[#6953CD]'> FOUND</span>

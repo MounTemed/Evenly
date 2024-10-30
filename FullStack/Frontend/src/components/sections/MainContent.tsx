@@ -58,7 +58,7 @@ const MainContent: React.FC = () => {
         </div>
 
         <div className='flex justify-center mt-12'>
-          <button className='relative w-full max-w-[187px] h-[55px] border-[#585858] border rounded-full hover:bg-gradient-to-r hover:from-[#CE4DA4] hover:to-[#7353E5] hover:border-none'>
+          <button className='relative w-full max-w-[187px] h-[55px] border-[#585858] border rounded-full transition-transform duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#CE4DA4] hover:to-[#7353E5] hover:border-none hover:scale-105 hover:animate-gradient'>
             <span className='absolute inset-0 bg-black opacity-20 rounded-full'></span>
             <span className='relative z-10 text-white font-medium'>
               Contact Me

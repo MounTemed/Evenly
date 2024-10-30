@@ -28,6 +28,7 @@ const Home: React.FC = () => {
       <Suspense fallback={<p>Loading Projects...</p>}>
         <ProjectsSection />
       </Suspense>
+      
     </div>
   )
 }
