@@ -40,7 +40,7 @@ const Home: React.FC<{ data: { title: string; description: string } }> = ({
         <meta name='description' content={data.description} />
         <link rel='icon' href='/logo.svg' />
       </Head>
-      <div className='font-poppins'>
+      <div className='font-poppins h-[2700px]'>
         <Header />
         <MainContent />
         <AboutMeSection />

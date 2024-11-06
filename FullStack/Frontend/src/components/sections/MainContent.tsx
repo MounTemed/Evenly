@@ -1,8 +1,8 @@
 // src/components/sections/MainContent.tsx
-import Image from 'next/image'
-import Avatars from '../../../public/avatar.gif'
-import PinkImage from '../../../public/pink.svg'
-import PurpleImage from '../../../public/purples.svg'
+import Image from 'next/image';
+import Avatars from '../../../public/avatar.gif';
+import PinkImage from '../../../public/pink.svg';
+import PurpleImage from '../../../public/purples.svg';
 
 const MainContent: React.FC = () => {
   return (
@@ -58,16 +58,18 @@ const MainContent: React.FC = () => {
         </div>
 
         <div className='flex justify-center mt-12'>
-          <button className='relative w-full max-w-[187px] h-[55px] border-[#585858] border rounded-full transition-transform duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#CE4DA4] hover:to-[#7353E5] hover:border-none hover:scale-105 hover:animate-gradient'>
-            <span className='absolute inset-0 bg-black opacity-20 rounded-full'></span>
-            <span className='relative z-10 text-white font-medium'>
-              Contact Me
-            </span>
-          </button>
+          <a href="https://t.me/sqlinked" target="_blank" rel="noopener noreferrer" className='w-[187px]'>
+            <button className='relative w-full max-w-[187px] h-[55px] border-[#585858] border rounded-full transition-transform duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#CE4DA4] hover:to-[#7353E5] hover:border-none hover:scale-105 hover:animate-gradient'>
+              <span className='absolute inset-0 bg-black opacity-20 rounded-full'></span>
+              <span className='relative z-10 text-white font-medium'>
+                Contact Me
+              </span>
+            </button>
+          </a>
         </div>
       </div>
     </main>
-  )
+  );
 }
 
-export default MainContent
+export default MainContent;

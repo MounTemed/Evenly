@@ -1,15 +1,22 @@
 // src/components/layout/Header.tsx
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Logo from '../../../public/logo.svg';
-import Burger from '../../../public/burger.png';
+import React, { useState } from 'react'
+import Image from 'next/image'
+import Logo from '../../../public/logo.svg'
+import Burger from '../../../public/burger.png'
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
+
+  const scrollToAbout = () => {
+    window.scrollBy({
+      top: 750,
+      behavior: 'smooth'
+    })
+  }
 
   return (
     <header className={`px-5 md:px-16 ${isOpen ? 'mt-0' : 'mt-9'}`}>
@@ -24,28 +31,27 @@ const Header: React.FC = () => {
           </div>
         </div>
         <div className='hidden md:flex space-x-4'>
-          {['About me', 'Contact'].map(text => (
-            <button
-              key={text}
-              className='bg-transparent border border-[#9A9A9A] rounded-lg h-9 w-24 transition duration-300 ease-in-out hover:bg-gradient-to-r from-[#CE4DA4] to-[#7353E5] hover:border-none hover:scale-105 hover:animate-gradient'
-            >
-              <span className='text-sm font-medium'>{text}</span>
-            </button>
+          {[
+            { text: 'About me', action: scrollToAbout }, // Изменяем на action
+            { text: 'Contact', url: 'https://t.me/sqlinked' }
+          ].map(({ text, action, url }) => (
+            <a key={text} href={url} target='_blank' rel='noopener noreferrer'>
+              <button
+                className='bg-transparent border border-[#9A9A9A] rounded-lg h-9 w-24 transition duration-300 ease-in-out hover:bg-gradient-to-r from-[#CE4DA4] to-[#7353E5] hover:border-none hover:scale-105 hover:animate-gradient'
+                onClick={action} // Добавляем обработчик клика
+              >
+                <span className='text-sm font-medium'>{text}</span>
+              </button>
+            </a>
           ))}
         </div>
 
         <div className='md:hidden'>
           <button className='text-lg' onClick={toggleMenu}>
-            <Image
-              src={Burger}
-              alt='Menu'
-              width={35}
-              height={35}
-            />
+            <Image src={Burger} alt='Menu' width={35} height={35} />
           </button>
         </div>
       </div>
-
 
       {isOpen && (
         <>
@@ -55,11 +61,15 @@ const Header: React.FC = () => {
           />
           <div className='fixed top-0 left-0 w-full h-full z-50 bg-black'>
             <div className='flex flex-col space-y-2 p-4'>
-              {['About me', 'Contact'].map(text => (
+              {['About me', 'Contact'].map((text, index) => (
                 <button
                   key={text}
                   className='w-full text-left bg-transparent border border-[#9A9A9A] rounded-lg h-9 transition duration-300 ease-in-out hover:bg-gradient-to-r from-[#CE4DA4] to-[#7353E5] hover:border-none hover:scale-105 hover:animate-gradient'
-                  onClick={toggleMenu}
+                  onClick={
+                    index === 0
+                      ? scrollToAbout
+                      : () => window.open('https://t.me/sqlinked', '_blank')
+                  }
                 >
                   <span className='text-sm font-medium text-white'>{text}</span>
                 </button>
@@ -70,18 +80,13 @@ const Header: React.FC = () => {
               className='absolute top-[120px] right-[35px] text-white'
               onClick={toggleMenu}
             >
-              <Image
-                src={Burger}
-                alt='Close Menu'
-                width={35}
-                height={35}
-              />
+              <Image src={Burger} alt='Close Menu' width={35} height={35} />
             </button>
           </div>
         </>
       )}
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
