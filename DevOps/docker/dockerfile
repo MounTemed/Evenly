@@ -1,1 +1,8 @@
-FROM baseImage
+
+FROM node:latest
+
+RUN apt-get update && npm install -g bun
+
+WORKDIR /app/website
+
+CMD [ "bun", "run", "dev" ]

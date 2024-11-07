@@ -1,6 +1,7 @@
----
 services:
-  webserver:
+  nginx:
     build: .
     ports:
-      - 127.0.0.1:7070:80
+      - 3000:3000
+    volumes:
+      - ../../FullStack/Frontend:/app/website
