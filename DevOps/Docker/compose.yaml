@@ -1,7 +1,0 @@
-services:
-  nginx:
-    build: .
-    ports:
-      - 3000:3000
-    volumes:
-      - ../../FullStack/Frontend:/app/website
