@@ -1,0 +1,5 @@
+---
+- name: Обновление Ubuntu
+  ansible.builtin.apt:
+    name: update
+    state: present

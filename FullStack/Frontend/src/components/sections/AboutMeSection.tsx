@@ -12,7 +12,7 @@ const AboutMeSection: React.FC = () => {
         </h1>
       </div>
 
-      <div className='mt-10 flex justify-center'>
+      <div className='mt-10 flex justify-center mx-3'>
         <div className='text-center w-full max-w-[706px] h-auto text-lg font-medium text-[#E1E1E1] relative'>
           <h1>
             I started my way into{' '}

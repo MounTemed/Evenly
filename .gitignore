@@ -49,6 +49,7 @@ lerna-debug.log*
 .env.production.local
 .env.local
 .env*
+bun.lockb
 
 # Системные файлы
 Thumbs.db
@@ -106,3 +107,15 @@ pids/
 *.pid.lock
 *.tgz
 .yarn-integrity
+
+# Ansible
+
+inventory.ini
+
+# Terraform
+
+Terraform
+
+# vscode
+
+.vscode

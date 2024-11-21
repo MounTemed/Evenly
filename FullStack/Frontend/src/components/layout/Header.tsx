@@ -13,8 +13,9 @@ const Header: React.FC = () => {
 
   const scrollToAbout = () => {
     window.scrollBy({
-      top: 750,
+      top: 200,
       behavior: 'smooth'
+      
     })
   }
 

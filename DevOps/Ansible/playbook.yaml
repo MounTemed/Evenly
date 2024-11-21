@@ -1,0 +1,13 @@
+---
+- name: Install Jenkins and Update
+  hosts: hosts
+  become: true
+  roles:
+    # update -> Обновление системы
+    #- update
+
+    # Jenkins -> Установка
+    #- jenkins
+
+    # Nginx -> Установка nginx
+    #- nginx

@@ -6,12 +6,12 @@ const StackSection: React.FC = () => {
   const techStack = [
     'Docker',
     'Ansible',
-    'Python',
-    'Kubernetes',
+    'Terraform',
+    'Golang',
+    'K8s',
     'Compose',
-    'GitHub Actions',
+    'Jenkins',
     'Bash',
-    'HyperDX'
   ];
 
   return (
@@ -55,17 +55,17 @@ const StackSection: React.FC = () => {
         }
         @media (min-width: 791px) and (max-width: 1023px) {
           li {
-            flex: 0 0 30%; /* 3 elements per row */
+            flex: 0 0 30%;
           }
         }
-        @media (max-width: 790px) {
+        @media (max-width: 800px) and (max-width: 790px) {
           ul {
-            max-width: calc(3 * 165px + 20px); /* 3 elements with margin */
+            max-width: calc(3 * 165px + 20px); 
           }
         }
-        @media (max-width: 789px) {
+        @media (max-width: 799px) {
           ul {
-            max-width: calc(2 * 165px + 30px); /* 2 elements with margin */
+            max-width: calc(2 * 165px + 30px);
           }
         }
       `}</style>

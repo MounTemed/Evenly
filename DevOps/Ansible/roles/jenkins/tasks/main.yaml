@@ -1,0 +1,31 @@
+---
+- name: Установка openjdk-17-jdk
+  ansible.builtin.apt:
+    name: openjdk-17-jdk
+    state: present
+
+- name: Загрузка ключа Jenkins
+  ansible.builtin.get_url:
+    url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+    dest: /usr/share/keyrings/jenkins-keyring.asc
+    mode: '0644'
+
+- name: Добавление репозитория Jenkins
+  ansible.builtin.apt_repository:
+    repo: "deb https://pkg.jenkins.io/debian-stable binary/"
+    state: present
+
+- name: Обновление списка пакетов
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Установка Jenkins
+  ansible.builtin.apt:
+    name: jenkins
+    state: present
+
+- name: Запуск Jenkins
+  ansible.builtin.service:
+    name: jenkins
+    state: started
+    enabled: true
